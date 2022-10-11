@@ -35,6 +35,18 @@ include 'database.php';
                 <label for="Telefoonnummer">Telefoonnummer</label>
                 <input type="text" class="form-control" placeholder="Voer uw telefoonnummer in" name="telefoonnummer" required>
             </div>
+            <div class="col-md-8">
+                <label for="Adres">Adres</label>
+                <input type="adress" class="form-control" placeholder="Voer uw adres in" name="adres" required>
+            </div>
+            <div class="col-md-2">
+                <label for="Zipcode">Zipcode</label>
+                <input type="zipcode" class="form-control" placeholder="Voer uw zipcode in" name="zipcode" required>
+            </div>
+            <div class="col-md-2">
+                <label for="Stad">Stad</label>
+                <input type="city" class="form-control" placeholder="Voer uw stad in" name="stad" required>
+            </div>
         <br> <button type="submit" class="btn btn-primary">Maken</button>
         </form>
         </div>
