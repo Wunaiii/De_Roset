@@ -1,12 +1,12 @@
 body{
-    height: 100vh;
+    height: 99%;
 }
 .container{
     display: grid;
     grid-template-columns: 3fr 8fr;
-    grid-template-rows: 2fr 9fr 1fr;
+    grid-template-rows: 1fr 3.5fr 6.5fr 1fr;
     grid-gap: 8px;
-    height: 100vh;
+    height: 99%;
 }
 
 .item-top{
@@ -21,6 +21,16 @@ body{
     justify-content: center;
     align-items: center;
    
+}
+.item-main{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 2;
+   grid-row-end: 4;
+   grid-column-start: 2;
+   grid-column-end: 3;
 }
 .item-bot{
     background-color: orange;
