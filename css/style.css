@@ -1,0 +1,27 @@
+.container{
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    grid-template-rows: 150px 500px;
+    grid-gap: 8px;
+}
+
+.item-top{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-mid{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-bot{
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3; 
+}
