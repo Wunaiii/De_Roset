@@ -1,0 +1,50 @@
+body{
+    height: 99%;
+    background-image: linear-gradient(pink, magenta);
+}
+.container{
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    grid-template-rows: 1fr 3.5fr 6.5fr 1fr;
+    grid-gap: 8px;
+    height: 99%;
+    margin: 0% 10% 0% 10%;
+    width: 80%;
+}
+
+.item-top{
+    background-color: magenta;
+    border: black solid 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-mid{
+    background-color: magenta;
+    border: black solid 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.item-main{
+    background-color: magenta;
+    border: black solid 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 2;
+   grid-row-end: 4;
+   grid-column-start: 2;
+   grid-column-end: 3;
+}
+.item-bot{
+    background-color: magenta;
+    border: black solid 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3; 
+    
+}
