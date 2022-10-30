@@ -1,6 +1,6 @@
 body{
     height: 99%;
-    background-image: linear-gradient(pink, magenta);
+    background: rgb(235, 142, 235);
 }
 .container{
     display: grid;
@@ -13,38 +13,38 @@ body{
 }
 
 .item-top{
-    background-color: magenta;
-    border: black solid 4px;
+    background-color: rgb(247, 99, 247);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .item-mid{
-    background-color: magenta;
-    border: black solid 4px;
+    background-color: rgb(247, 99, 247);
+    /* border: black solid 4px; */
     display: flex;
     justify-content: center;
     align-items: center;
    
 }
 .item-main{
-    background-color: magenta;
-    border: black solid 4px;
+    background-color: rgb(247, 99, 247);
+    /* border: black solid 4px; */
     display: flex;
     justify-content: center;
     align-items: center;
     grid-row-start: 2;
-   grid-row-end: 4;
-   grid-column-start: 2;
-   grid-column-end: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 .item-bot{
-    background-color: magenta;
-    border: black solid 4px;
+    background-color: rgb(243, 67, 243);
+    border: rgb(247, 99, 247) solid 4px;
+    border-radius: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column-start: 1;
-    grid-column-end: 3; 
-    
+    grid-column-end: 3;
 }

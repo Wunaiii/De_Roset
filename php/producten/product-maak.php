@@ -1,11 +1,11 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
+include '../config/database.php';
+include '../config/headersettings.php';
 
-$sql = "SELECT * FROM categorieen ";
+$sql = "SELECT * FROM products";
 
 if ($result = mysqli_query($conn, $sql)) {
-    $alle_categorieen = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $alle_products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 ?>
 
@@ -15,19 +15,27 @@ if ($result = mysqli_query($conn, $sql)) {
     </head>
     <body>
         <div class="container py-5 px-5">
-        <h1>Melding maken</h1> <br>
-        <form class="row g-3" action="melding-maak-verwerk.php" method="post">
-            <div class="col-md-6">
-                <label for="bericht">Bericht</label>
-                <input type="text" class="form-control" placeholder="Voer uw bericht in" name="bericht" required>
+        <h1>Producten maken</h1> <br>
+        <form class="row g-3" action="product-maak-verwerk.php" method="post">
+            <div class="col-md-4">
+                <label for="Naam">Naam</label>
+                <input type="name" class="form-control" placeholder="Voer de naam in" name="naam" required>
             </div>
-            <div class="col-md-6">
-                <label for="exampleFormControlSelect1">Selecteer categorie</label>
-                <select class=" form-control" name="categorie" aria-label="Default select example">
-                    <?php foreach ($alle_categorieen as $categorie) : ?>
-                        <option value="<?php echo $categorie["id"] ?>"> <?php echo $categorie["naam"] ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <div class="col-md-8">
+                <label for="Prijs per kilo">Prijs per kilo</label>
+                <input type="price" class="form-control" placeholder="Voer de prijs per kilo in" name="prijs per kilo" required>
+            </div>
+            <div class="col-md-8">
+                <label for="Is smaak van de week">Is smaak van de week</label>
+                <input type="price" class="form-control" placeholder="Voer uw is smaak van de week in" name="is smaak van de week" required>
+            </div>
+            <div class="col-md-2">
+                <label for="Categorie">Categorie</label>
+                <input type="text" class="form-control" placeholder="Voer de categorie in" name="categorie" required>
+            </div>
+            <div class="col-md-2">
+                <label for="Foto">Foto</label>
+                <input type="text" class="form-control" placeholder="Voer uw foto in" name="foto" required>
             </div>
             <br><button type="submit" name="submit" class="btn btn-primary">Maken</button>
         </form>

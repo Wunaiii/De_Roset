@@ -1,9 +1,9 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
-$sql = "SELECT * FROM meldingen";
+include '../config/database.php';
+include '../config/headersettings.php';
+$sql = "SELECT * FROM products";
 $result = mysqli_query($conn,$sql);
-$alle_meldingen = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$alle_producten = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 <html>
@@ -16,29 +16,25 @@ $alle_meldingen = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <thead class="table-info">
             <tr>
             <th><b><h3> Id </h3></b></th>
-            <th><b><h3> Gebruiker ID </h3></b></th>
-            <th><b><h3> Bericht </h3></b></th>
-            <th><b><h3> Status </h3></b></th>
-            <th><b><h3> Categorie ID </h3></b></th>
-            <th><b><h3> Datum </h3></b></th>
-            <th><b><h3> Opmerking </h3></b></th>
-            <th><b><h3> Personeel ID </h3></b></th>
+            <th><b><h3> Naam </h3></b></th>
+            <th><b><h3> Prijs per kilo </h3></b></th>
+            <th><b><h3> Is prijs van de week </h3></b></th>
+            <th><b><h3> Categorie </h3></b></th>
+            <th><b><h3> Foto </h3></b></th>
             <th><b><h3> Update/Delete </h3></b></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($alle_meldingen as $melding): ?>
+            <?php foreach($alle_producten as $products): ?>
                 <tr>
-                <td><p><?php echo $melding["id"]?></p></td>
-                <td><p><?php echo $melding["gebruiker_id"]?></p></td>
-                <td><p><?php echo $melding["bericht"]?></p></td>
-                <td><p><?php echo $melding["status"]?></p></td>
-                <td><p><?php echo $melding["categorie_id"]?></p></td>
-                <td><p><?php echo $melding["datum"]?></p></td>
-                <td><p><?php echo $melding["opmerking"]?></p></td>
-                <td><p><?php echo $melding["personeel_id"]?></p></td>
-                <td>        <a href="melding-update.php?id=<?php echo $melding["id"] ?>" class="btn btn-warning">Update</a>
-                    &nbsp;  <a href="melding-delete.php?id=<?php echo $melding["id"] ?>" class="btn btn-danger">Delete</a>
+                <td><p><?php echo $products["id"]?></p></td>
+                <td><p><?php echo $products["name"]?></p></td>
+                <td><p><?php echo $products["price_per_kg"]?></p></td>
+                <td><p><?php echo $products["is_flavor_ot_week"]?></p></td>
+                <td><p><?php echo $products["category"]?></p></td>
+                <td><p><?php echo $products["image"]?></p></td>
+                <td>        <a href="product-update.php?id=<?php echo $products["id"] ?>" class="btn btn-warning">Update</a>
+                    &nbsp;  <a href="product-delete.php?id=<?php echo $products["id"] ?>" class="btn btn-danger">Delete</a>
                 </td>
                 </tr>
             <?php endforeach; ?>

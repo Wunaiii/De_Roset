@@ -1,9 +1,9 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
+include '../config/database.php';
+include '../config/headersettings.php';
 
 $id = $_GET["id"];
-$sql = "SELECT * FROM meldingen WHERE id = $id LIMIT 1";
+$sql = "SELECT * FROM products WHERE id = $id LIMIT 1";
 
 if ($result = mysqli_query($conn, $sql)) {
     $melding = mysqli_fetch_assoc($result);
@@ -17,13 +17,13 @@ if ($result = mysqli_query($conn, $sql)) {
     <body>
         <div class="container py-5 px-5">
         <div class="col-md-4">
-        <h1>Melding update</h1>
+        <h1>Product update</h1>
         </div>
         <div class="col-md-8">
-        <b><?php echo $melding["bericht"] ?></b>
+        <b><?php echo $products["naam"] ?></b>
         </div>
         <br>
-        <form class="row g-3" action="melding-update-verwerk.php" method="post">
+        <form class="row g-3" action="product-update-verwerk.php" method="post">
             <div class="col-md-12">
                 <label for="Opmerking">Opmerking</label>
                 <input type="text" class="form-control" placeholder="Voer uw opmerking in" name="opmerking" required>

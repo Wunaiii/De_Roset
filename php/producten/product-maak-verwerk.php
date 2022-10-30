@@ -1,26 +1,28 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
+include '../config/database.php';
+include '../config/headersettings.php';
 
 if (isset($_POST["submit"])) {
-    if (   $_POST['bericht'] != ''
-    && $_POST['categorie'] != '' )
+    if (   $_POST['naam'] != ''
+    && $_POST['prijs per kilo'] != ''
+    && $_POST['is smaak van de week'] != ''
+    && $_POST['categorie'] != ''
+    && $_POST['foto'] != '' )
     {
-        $bericht = $_POST["bericht"];
-        $categorie = $_POST["categorie"];
-        $status = 'verwerken';
-        $datum = date('d-M-Y');
-        $gebruiker_id = $_SESSION['gebruiker_id'];
+        $name = $_POST["naam"];
+        $price_per_kg = $_POST["prijs per kilo"];
+        $is_flavor_ot_week = $_POST["is smaak van de week"];
+        $category = $_POST["categorie"];
+        $image = $_POST["foto"];
         
 
-        $sql = "INSERT INTO meldingen (bericht, categorie_id, status, datum, gebruiker_id)
-        VALUES ('$bericht', '$categorie', '$status', '$datum', '$gebruiker_id')";
+        $sql = "INSERT INTO products (name, price_per_kilo, is_flavor_ot_week, category, image)
+        VALUES ('$name', '$price_per_kg', '$is_flavor_ot_week', '$category', '$image')";
 
     if (mysqli_query($conn, $sql) === TRUE) {
-        echo "Nieuwe melding is gemaakt!";
-        header("Location: melding-maak.php");
+        echo "Nieuwe product is gemaakt!";
+        header("Location: product-maak.php");
         }
     }
 }
 ?>
-

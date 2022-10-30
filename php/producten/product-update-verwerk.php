@@ -1,6 +1,6 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
+include '../config/database.php';
+include '../config/headersettings.php';
 if (isset($_POST["submit"])) {
     $id = $_POST["id"];
 

@@ -1,11 +1,11 @@
 <?php
-include 'database.php';
-include 'headersettings.php';
+include '../config/database.php';
+include '../config/headersettings.php';
 
 $id = $_GET['id'];
-$sql = "DELETE FROM meldingen WHERE id = $id";
+$sql = "DELETE FROM products WHERE id = $id";
 
 if (mysqli_query($conn, $sql)) {
-    header("location: melding-overzicht.php");
+    header("location: product-overzicht.php");
 }
 ?>
